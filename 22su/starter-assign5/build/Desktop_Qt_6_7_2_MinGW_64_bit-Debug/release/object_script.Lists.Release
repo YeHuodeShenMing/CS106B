@@ -1,0 +1,16 @@
+release/labyrinth.o
+release/main.o
+release/sorting.o
+release/warmup.o
+release/MazeGenerator.o
+release/bits.o
+release/huffman.o
+release/main.o
+release/MemoryDiagnostics.o
+release/TestDriver.o
+release/TestingGUI.o
+release/TextUtils.o
+release/MemoryDiagnostics.o
+release/TestDriver.o
+release/TestingGUI.o
+release/TextUtils.o

@@ -1,0 +1,10 @@
+# ninja log v6
+4	122	7481134819472496	CMakeFiles/lecture.dir/main.c.obj	2714ad32db7ac7b3
+12	1362	7481115837549117	CMakeFiles/lecture.dir/pta.c.obj	1c0fbe8680eb276d
+3	151	7481142872664243	CMakeFiles/lecture.dir/main.c.obj	2714ad32db7ac7b3
+3	94	7481143039857529	CMakeFiles/lecture.dir/main.c.obj	2714ad32db7ac7b3
+95	239	7481143040780237	lecture.exe	325c2d9fd1e049e8
+4	115	7481152718618288	CMakeFiles/lecture.dir/main.c.obj	2714ad32db7ac7b3
+116	281	7481152719732497	lecture.exe	325c2d9fd1e049e8
+4	97	7481153015188343	CMakeFiles/lecture.dir/main.c.obj	2714ad32db7ac7b3
+97	252	7481153016125106	lecture.exe	325c2d9fd1e049e8

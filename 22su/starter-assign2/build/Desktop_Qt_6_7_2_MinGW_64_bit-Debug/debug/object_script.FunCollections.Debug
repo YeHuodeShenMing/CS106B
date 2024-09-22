@@ -1,0 +1,10 @@
+debug/adtwarmup.o
+debug/main.o
+debug/map.o
+debug/maze.o
+debug/mazegraphics.o
+debug/search.o
+debug/MemoryDiagnostics.o
+debug/TestDriver.o
+debug/TestingGUI.o
+debug/TextUtils.o

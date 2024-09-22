@@ -1,0 +1,7 @@
+D:/2024CS/CS106B/24su/lecture/lecture/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/lecture.dir
+D:/2024CS/CS106B/24su/lecture/lecture/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
+D:/2024CS/CS106B/24su/lecture/lecture/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
+D:/2024CS/CS106B/24su/lecture/lecture/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/list_install_components.dir
+D:/2024CS/CS106B/24su/lecture/lecture/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/install.dir
+D:/2024CS/CS106B/24su/lecture/lecture/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/install/local.dir
+D:/2024CS/CS106B/24su/lecture/lecture/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/install/strip.dir
