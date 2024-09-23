@@ -271,7 +271,9 @@ Queue<Bit> encodeText(EncodingTreeNode* tree, string text) {
 
         if (curr->isLeaf()) {
             charToseqence[curr->ch] = tmp;
-            explored.pop();
+            currData = explored.pop();
+            curr = currData.first->one;
+            tmp = currData.second + "1";
         }
 
     }
@@ -304,52 +306,32 @@ Queue<Bit> encodeText(EncodingTreeNode* tree, string text) {
  * your implementation.
  */
 void flattenTree(EncodingTreeNode* tree, Queue<Bit>& treeShape, Queue<char>& treeLeaves) {
-    /* TODO: Implement this function. */
     EncodingTreeNode* curr = tree;
     Stack<EncodingTreeNode*> unallocateOne;
 
     unallocateOne.push(curr);
+    // 用来保证不退出while
+    unallocateOne.push(curr);
     treeShape.enqueue(1);
 
+    curr = curr->zero;
 
     while (!unallocateOne.isEmpty()) {
         if (curr->isLeaf()) {
             treeShape.enqueue(0);
             treeLeaves.enqueue(curr->getChar());
-            unallocateOne.pop();
-        }
 
-        if (curr->zero) {
-            if (curr->zero->isLeaf()) {
-                treeLeaves.enqueue(curr->zero->getChar());
-                treeShape.enqueue(0);
-            }
-            else {
-                unallocateOne.push(curr);
-                treeShape.enqueue(1);
-                curr = curr->zero;
-                continue;
-            }
+            curr = unallocateOne.pop()->one;
         }
+        else {
+            treeShape.enqueue(1);
+            unallocateOne.push(curr);
 
-        if (curr->one) {
-            if (curr->one->isLeaf()) {
-                treeLeaves.enqueue(curr->one->getChar());
-                treeShape.enqueue(0);
-                curr = unallocateOne.pop()->one;
-                // continue;
-            }
-            else {
-                // unallocateOne.push(curr);
-                treeShape.enqueue(1);
-                curr = curr->one;
-                // continue;
-            }
+            curr = curr->zero;
         }
     }
 
 }
-
 
 /**
  * Compress the input text using Huffman coding, producing as output
@@ -381,6 +363,25 @@ EncodedData compress(string messageText) {
 }
 
 /* * * * * * Testing Helper Functions Below This Point * * * * * */
+EncodingTreeNode* createTree() {
+    EncodingTreeNode* whitespace = new EncodingTreeNode(' ');
+    EncodingTreeNode* H = new EncodingTreeNode('H');
+    EncodingTreeNode* I = new EncodingTreeNode('I');
+    EncodingTreeNode* A = new EncodingTreeNode('A');
+    EncodingTreeNode* Y = new EncodingTreeNode('Y');
+    EncodingTreeNode* O = new EncodingTreeNode('O');
+    EncodingTreeNode* P = new EncodingTreeNode('P');
+    EncodingTreeNode* right4left = new EncodingTreeNode(I, A);
+    EncodingTreeNode* right4right = new EncodingTreeNode(Y, O);
+    EncodingTreeNode* right3 = new EncodingTreeNode(right4left, right4right);
+    EncodingTreeNode* right2 = new EncodingTreeNode(right3, P);
+
+    EncodingTreeNode* left2 = new EncodingTreeNode(whitespace, H);
+
+    EncodingTreeNode* root = new EncodingTreeNode(left2, right2);
+
+    return root;
+}
 
 EncodingTreeNode* createExampleTree() {
     /* Example encoding tree used in multiple test cases:
@@ -603,6 +604,21 @@ STUDENT_TEST("flatten") {
 
     Queue<Bit>  treeShape;
     Queue<char> treeLeaves;
+    flattenTree(reference, treeShape, treeLeaves);
+
+    EncodingTreeNode* tree = unflattenTree(treeShape, treeLeaves);
+    EXPECT(areEqual(tree, reference));
+
+    deallocateTree(reference);
+    deallocateTree(tree);
+}
+
+STUDENT_TEST("flatten 2") {
+    EncodingTreeNode* reference = createTree();
+
+    Queue<Bit>  treeShape;
+    Queue<char> treeLeaves;
+
     flattenTree(reference, treeShape, treeLeaves);
 
     EncodingTreeNode* tree = unflattenTree(treeShape, treeLeaves);

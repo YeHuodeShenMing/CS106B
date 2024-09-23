@@ -24,3 +24,4 @@ std::string decompress(EncodedData& data);
 // std::string decodeTextHelper(EncodingTreeNode* tree, Queue<Bit>& messageBits, std::string& already, EncodingTreeNode* root);
 
 EncodingTreeNode* createExampleTree();
+EncodingTreeNode* createTree();
